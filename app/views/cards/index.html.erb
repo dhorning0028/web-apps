@@ -1,0 +1,71 @@
+<h1>Pick a Card!!</h1>
+
+<% 
+    ranks = [2, 3, 4, 5, 6, 7, 8, 9, 10, "jack", "queen", "king", "ace"]
+    suits = ["clubs", "hearts", "spades", "diamonds"]
+    card1 = ranks + suits
+
+#.sample is the best way to get a random thing out of a sample
+
+rank1 = ranks.sample
+suit1 = suits.sample
+
+rank2 = ranks.sample
+suit2 = suits.sample
+
+rank3 = ranks.sample
+suit3 = suits.sample
+
+rank4 = ranks.sample
+suit4 = suits.sample
+
+rank5 = ranks.sample
+suit5 = suits.sample
+
+#create a deck of cards
+deck = []
+for rank in ranks
+    for suit in suits
+        #create card from rank and suit
+        card = "#{rank}_of_#{suit}"
+        deck.push(card)
+    end
+end
+shuffled_deck = deck.shuffle
+hand = shuffled_deck[0,5]
+
+%>
+<%= deck %>
+
+
+
+<ul>
+    <li><%= shuffled_deck[0] %></li>
+    <li><%= shuffled_deck[1] %></li>
+    <li><%= shuffled_deck[2] %></li>
+    <li><%= shuffled_deck[3] %></li>
+    <li><%= shuffled_deck[4] %></li>
+
+
+<p>
+    
+    <img src="/images/cards/<%= shuffled_deck[0] %>.svg">
+    <img src="/images/cards/<%= shuffled_deck[1] %>.svg">
+    <img src="/images/cards/<%= shuffled_deck[2] %>.svg">
+    <img src="/images/cards/<%= shuffled_deck[3] %>.svg">
+    <img src="/images/cards/<%= shuffled_deck[4] %>.svg">
+</p>
+
+<ul>
+    <li><%= shuffled_deck[0] %> of <%= suit1 %></li>
+</ul>
+
+# <p>Card one is <%= shuffled_deck[0] %> of <%= suit1 %></p>
+# <p>Card two is <%= shuffled_deck[0] %> of <%= suit2 %></p>
+# <p>Card three is <%= shuffled_deck[0] %> of <%= suit3 %></p>
+# <p>Card four is <%= shuffled_deck[0] %> of <%= suit4 %></p>
+# <p>Card five is <%= shuffled_deck[0] %> of <%= suit5 %></p>
+
+<p>
+    <a href="/cards"><strong><em>Shuffle!</a>
+</p>
