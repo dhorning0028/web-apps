@@ -1,0 +1,16 @@
+<% fillings = ["chicken", "steak", "chorizo", "fish"] %>
+
+<h1>I love tacos!</h1>
+<ul>
+    <% for filling in fillings %>
+        <li><%= filling %></li>
+    <% end %>
+
+<ul>  
+    <li> chicken </li>
+    <li> steak </li>
+    <li> chorizo </li>
+    <li> fish </li>
+</ul>
+
+<p>Currently there are <%= fillings.size %> kinds of tacos</p>
